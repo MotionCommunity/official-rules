@@ -4,25 +4,7 @@
   "draftSnapshot": null,
   "stagingApproved": [],
   "matchResults": [],
-  "scheduledMatches": [
-    {
-      "id": "sched-1773640659363-v2miv10",
-      "round": "quarterfinals",
-      "matchSlot": "1",
-      "teamA": {
-        "name": "Legacy"
-      },
-      "teamB": {
-        "name": "Founders"
-      },
-      "startAt": "2026-03-16T17:58:00.000Z",
-      "tournamentId": 8,
-      "lastUpdated": "2026-03-16T05:57:39.363Z",
-      "status": "scheduled",
-      "discordChannelId": null,
-      "createdAt": "2026-03-16T05:57:39.363Z"
-    }
-  ],
+  "scheduledMatches": [],
   "bracketConfig": {
     "tournamentId": 8,
     "teamSize": 1,
@@ -52,18 +34,18 @@
         "draftedToTeam": "Legacy"
       }
     ],
-    "updatedAt": "2026-03-16T05:54:47.749Z"
+    "updatedAt": "2026-03-16T05:58:26.914Z"
   },
   "recentChanges": {
     "tournament-schedule": {
       "by": "Uncle Rico",
-      "at": "2026-03-16T05:57:39.364Z"
+      "at": "2026-03-16T05:53:47.123Z"
     },
     "tournament-bracket": {
       "by": "Uncle Rico",
-      "at": "2026-03-16T05:54:47.750Z"
+      "at": "2026-03-16T05:58:26.914Z"
     }
   },
   "stripRolesRequest": null,
-  "lastUpdated": "2026-03-16T05:57:39.812Z"
+  "lastUpdated": "2026-03-16T05:58:27.299Z"
 }
