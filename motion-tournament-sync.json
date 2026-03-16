@@ -17,9 +17,9 @@
       },
       "startAt": "2026-03-16T06:01:26.026Z",
       "tournamentId": 8,
-      "lastUpdated": "2026-03-16T06:01:26.026Z",
+      "lastUpdated": "2026-03-16T06:01:31.555Z",
       "status": "calling",
-      "startRequestedAt": "2026-03-16T06:01:26.026Z",
+      "startRequestedAt": "2026-03-16T06:01:31.555Z",
       "discordChannelId": null,
       "createdAt": "2026-03-16T06:01:26.026Z"
     }
@@ -58,7 +58,7 @@
   "recentChanges": {
     "tournament-schedule": {
       "by": "Uncle Rico",
-      "at": "2026-03-16T06:01:26.027Z"
+      "at": "2026-03-16T06:01:31.555Z"
     },
     "tournament-bracket": {
       "by": "Uncle Rico",
@@ -66,5 +66,5 @@
     }
   },
   "stripRolesRequest": null,
-  "lastUpdated": "2026-03-16T06:01:26.489Z"
+  "lastUpdated": "2026-03-16T06:01:31.993Z"
 }
