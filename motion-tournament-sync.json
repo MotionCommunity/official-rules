@@ -4,7 +4,43 @@
   "draftSnapshot": null,
   "stagingApproved": [],
   "matchResults": [],
-  "scheduledMatches": [],
+  "scheduledMatches": [
+    {
+      "id": "sched-1773640886026-ftvqped",
+      "round": "quarterfinals",
+      "matchSlot": "1",
+      "teamA": {
+        "name": "Team A"
+      },
+      "teamB": {
+        "name": "Team B"
+      },
+      "startAt": "2026-03-16T06:01:26.026Z",
+      "tournamentId": 8,
+      "lastUpdated": "2026-03-16T06:42:13.998Z",
+      "status": "calling",
+      "startRequestedAt": "2026-03-16T06:42:13.998Z",
+      "discordChannelId": null,
+      "createdAt": "2026-03-16T06:01:26.026Z"
+    },
+    {
+      "id": "sched-1773643818845-zgzi45c",
+      "round": "quarterfinals",
+      "matchSlot": "1",
+      "teamA": {
+        "name": "Team alpha"
+      },
+      "teamB": {
+        "name": "Legacy"
+      },
+      "startAt": "2026-03-16T06:55:00.000Z",
+      "tournamentId": 8,
+      "lastUpdated": "2026-03-16T06:50:18.845Z",
+      "status": "scheduled",
+      "discordChannelId": null,
+      "createdAt": "2026-03-16T06:50:18.845Z"
+    }
+  ],
   "bracketConfig": {
     "tournamentId": 8,
     "teamSize": 1,
@@ -39,7 +75,7 @@
   "recentChanges": {
     "tournament-schedule": {
       "by": "Uncle Rico",
-      "at": "2026-03-16T06:45:37.498Z"
+      "at": "2026-03-16T06:50:18.846Z"
     },
     "tournament-bracket": {
       "by": "Uncle Rico",
@@ -47,5 +83,5 @@
     }
   },
   "stripRolesRequest": null,
-  "lastUpdated": "2026-03-16T06:45:37.765Z"
+  "lastUpdated": "2026-03-16T06:50:19.122Z"
 }
