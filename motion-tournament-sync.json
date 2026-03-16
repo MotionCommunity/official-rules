@@ -4,32 +4,48 @@
   "draftSnapshot": null,
   "stagingApproved": [],
   "matchResults": [],
-  "scheduledMatches": [
-    {
-      "id": "sched-1773640427122-dguwyp4",
-      "round": "quarterfinals",
-      "matchSlot": "1",
-      "teamA": {
-        "name": "Legacy"
+  "scheduledMatches": [],
+  "bracketConfig": {
+    "tournamentId": 8,
+    "teamSize": 1,
+    "seriesFormat": "BestOf3",
+    "bracketType": "DoubleElimination",
+    "roundSeriesFormats": [
+      {
+        "round": "semifinals",
+        "seriesFormat": "BestOf5"
       },
-      "teamB": {
+      {
+        "round": "finals",
+        "seriesFormat": "BestOf5"
+      }
+    ],
+    "teamConfig": [
+      {
         "name": "Legacy"
-      },
-      "startAt": "2026-03-16T17:54:00.000Z",
-      "tournamentId": 8,
-      "lastUpdated": "2026-03-16T05:53:47.122Z",
-      "status": "scheduled",
-      "discordChannelId": null,
-      "createdAt": "2026-03-16T05:53:47.122Z"
-    }
-  ],
-  "bracketConfig": null,
+      }
+    ],
+    "roster": [
+      {
+        "id": 2,
+        "ign": "Escanor",
+        "discordUsername": "TikTok_Escanor",
+        "discordUserId": null,
+        "draftedToTeam": "Legacy"
+      }
+    ],
+    "updatedAt": "2026-03-16T05:54:47.749Z"
+  },
   "recentChanges": {
     "tournament-schedule": {
       "by": "Uncle Rico",
       "at": "2026-03-16T05:53:47.123Z"
+    },
+    "tournament-bracket": {
+      "by": "Uncle Rico",
+      "at": "2026-03-16T05:54:47.750Z"
     }
   },
   "stripRolesRequest": null,
-  "lastUpdated": "2026-03-16T05:53:47.837Z"
+  "lastUpdated": "2026-03-16T05:54:48.178Z"
 }
