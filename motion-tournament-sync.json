@@ -29,9 +29,42 @@
     "seriesFormat": "BestOf5",
     "bracketType": "SingleElimination",
     "roundSeriesFormats": [],
-    "teamConfig": [],
+    "teamConfig": [
+      {
+        "name": "Legacy",
+        "discordRoleId": "1482963996804911194"
+      },
+      {
+        "name": "Genesis",
+        "discordRoleId": "1482964123527549072"
+      },
+      {
+        "name": "Ignition",
+        "discordRoleId": "1483231567844479196"
+      },
+      {
+        "name": "Impact",
+        "discordRoleId": "1483231621170594027"
+      },
+      {
+        "name": "Catalyst",
+        "discordRoleId": "1483231647460622466"
+      },
+      {
+        "name": "Crest",
+        "discordRoleId": "1483231684538400949"
+      },
+      {
+        "name": "Valor",
+        "discordRoleId": "1483231710018670765"
+      },
+      {
+        "name": "Phantom",
+        "discordRoleId": "1483231735834480822"
+      }
+    ],
     "roster": [],
-    "updatedAt": "2026-03-16T22:42:34.367Z"
+    "updatedAt": "2026-03-16T22:42:41.331Z"
   },
   "recentChanges": {
     "tournament-schedule": {
@@ -40,9 +73,9 @@
     },
     "tournament-bracket": {
       "by": "Uncle Rico",
-      "at": "2026-03-16T22:42:34.368Z"
+      "at": "2026-03-16T22:42:41.333Z"
     }
   },
   "stripRolesRequest": null,
-  "lastUpdated": "2026-03-16T22:42:35.631Z"
+  "lastUpdated": "2026-03-16T22:42:42.611Z"
 }
