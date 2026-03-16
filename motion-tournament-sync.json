@@ -15,11 +15,11 @@
       "teamB": {
         "name": "Team B"
       },
-      "startAt": "2026-03-16T06:01:26.026Z",
+      "startAt": "2026-03-16T06:02:24.923Z",
       "tournamentId": 8,
-      "lastUpdated": "2026-03-16T06:01:31.555Z",
+      "lastUpdated": "2026-03-16T06:02:24.923Z",
       "status": "calling",
-      "startRequestedAt": "2026-03-16T06:01:31.555Z",
+      "startRequestedAt": "2026-03-16T06:02:24.923Z",
       "discordChannelId": null,
       "createdAt": "2026-03-16T06:01:26.026Z"
     }
@@ -58,7 +58,7 @@
   "recentChanges": {
     "tournament-schedule": {
       "by": "Uncle Rico",
-      "at": "2026-03-16T06:01:31.555Z"
+      "at": "2026-03-16T06:02:24.926Z"
     },
     "tournament-bracket": {
       "by": "Uncle Rico",
@@ -66,5 +66,5 @@
     }
   },
   "stripRolesRequest": null,
-  "lastUpdated": "2026-03-16T06:01:31.993Z"
+  "lastUpdated": "2026-03-16T06:02:25.350Z"
 }
