@@ -15,11 +15,11 @@
       "teamB": {
         "name": "Team B"
       },
-      "startAt": "2026-03-16T06:02:24.923Z",
+      "startAt": "2026-03-16T06:01:26.026Z",
       "tournamentId": 8,
-      "lastUpdated": "2026-03-16T06:02:24.923Z",
+      "lastUpdated": "2026-03-16T06:01:26.026Z",
       "status": "calling",
-      "startRequestedAt": "2026-03-16T06:02:24.923Z",
+      "startRequestedAt": "2026-03-16T06:01:26.026Z",
       "discordChannelId": null,
       "createdAt": "2026-03-16T06:01:26.026Z"
     }
@@ -53,18 +53,18 @@
         "draftedToTeam": "Legacy"
       }
     ],
-    "updatedAt": "2026-03-16T05:54:47.749Z"
+    "updatedAt": "2026-03-16T06:02:29.893Z"
   },
   "recentChanges": {
     "tournament-schedule": {
       "by": "Uncle Rico",
-      "at": "2026-03-16T06:02:24.926Z"
+      "at": "2026-03-16T06:01:26.027Z"
     },
     "tournament-bracket": {
       "by": "Uncle Rico",
-      "at": "2026-03-16T05:54:47.750Z"
+      "at": "2026-03-16T06:02:29.894Z"
     }
   },
   "stripRolesRequest": null,
-  "lastUpdated": "2026-03-16T06:02:25.350Z"
+  "lastUpdated": "2026-03-16T06:02:30.271Z"
 }
