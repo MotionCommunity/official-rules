@@ -25,7 +25,7 @@
   ],
   "bracketConfig": {
     "tournamentId": 9,
-    "teamSize": 3,
+    "teamSize": 2,
     "seriesFormat": "BestOf5",
     "bracketType": "SingleElimination",
     "roundSeriesFormats": [],
@@ -64,7 +64,7 @@
       }
     ],
     "roster": [],
-    "updatedAt": "2026-03-16T23:57:09.719Z"
+    "updatedAt": "2026-03-16T23:57:21.403Z"
   },
   "recentChanges": {
     "tournament-schedule": {
@@ -73,9 +73,9 @@
     },
     "tournament-bracket": {
       "by": "Uncle Rico",
-      "at": "2026-03-16T23:57:09.720Z"
+      "at": "2026-03-16T23:57:21.404Z"
     }
   },
   "stripRolesRequest": null,
-  "lastUpdated": "2026-03-16T23:57:11.077Z"
+  "lastUpdated": "2026-03-16T23:57:22.751Z"
 }
