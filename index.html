@@ -1,16 +1,512 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rules preview</title><style>body{margin:0;background:#0a0e1a;color:#e2e8f0;font-family:system-ui,-apple-system,sans-serif;line-height:1.5;}.section{padding:2rem 1.5rem;max-width:900px;margin:0 auto;}.hero.section{padding:3rem 1.5rem 2rem;text-align:center;}.hero-inner{max-width:640px;margin:0 auto;}.hero-eyebrow,.hero-tagline{font-size:0.75rem;letter-spacing:0.15em;color:#38bdf8;margin-bottom:0.5rem;}.hero-title{font-size:2.5rem;font-weight:800;margin:0 0 0.5rem;letter-spacing:0.2em;color:#f8fafc;}.hero-sub,.hero-subtitle{font-size:1rem;color:#94a3b8;margin:0 0 1rem;}.hero-badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:1rem;}.hero-badges .badge{font-size:0.8rem;letter-spacing:2px;padding:6px 12px;border:1px solid rgba(148,163,184,0.3);color:#94a3b8;}.hero-badges .badge.hot{border-color:#38bdf8;color:#38bdf8;}.hero-season-label,.hero-formats-label,.hero-game-label,.hero-open-label{font-size:0.8rem;color:#64748b;margin:0.25rem 0;}.section-inner{background:rgba(15,23,42,0.8);border-radius:12px;padding:1.5rem;border:1px solid rgba(148,163,184,0.2);}.section-tag{font-size:0.75rem;letter-spacing:0.1em;color:#38bdf8;margin-bottom:0.5rem;}.section-title{font-size:1.5rem;margin:0 0 0.5rem;color:#f8fafc;}.section-desc{color:#94a3b8;margin:0 0 1rem;font-size:0.95rem;}.format-grid,.rules-grid,.staff-grid{display:grid;gap:1rem;}.format-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}.format-card{background:rgba(30,41,59,0.6);padding:1rem;border-radius:8px;border:1px solid rgba(148,163,184,0.15);}.format-icon{font-size:1.5rem;}.format-name{font-weight:700;color:#38bdf8;}.format-type{font-size:0.85rem;color:#94a3b8;}.format-detail{font-size:0.9rem;margin-top:0.25rem;}.rules-cat{font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#38bdf8;margin:1rem 0 0.5rem;}.rule-card{display:flex;gap:1rem;padding:0.75rem 0;border-bottom:1px solid rgba(148,163,184,0.15);}.rule-num{flex-shrink:0;font-weight:700;color:#38bdf8;min-width:2.5rem;}.rule-title{font-weight:600;margin-bottom:0.25rem;}.rule-text{font-size:0.9rem;color:#cbd5e1;}.rule-text .flag{color:#f87171;}.rule-text .good{color:#22d98a;}.prizes-wrap{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;}.prize-card{padding:1rem;border-radius:8px;min-width:180px;}.prize-card.first{background:linear-gradient(135deg,rgba(34,197,94,0.2),rgba(34,197,94,0.05));border:1px solid rgba(34,197,94,0.4);}.prize-card.second{background:rgba(148,163,184,0.1);border:1px solid rgba(148,163,184,0.2);}.prize-place,.prize-name{font-weight:700;}.prize-reward{font-size:0.9rem;white-space:pre-line;margin-top:0.5rem;}.prize-info{margin-top:0.75rem;font-size:0.9rem;color:#94a3b8;}.staff-card{display:flex;align-items:center;gap:1rem;padding:0.75rem;background:rgba(30,41,59,0.4);border-radius:8px;}.staff-avatar img{width:48px;height:48px;border-radius:50%;object-fit:cover;}.staff-role{font-size:0.8rem;color:#38bdf8;}.staff-name{font-weight:600;}.staff-discord{font-size:0.85rem;color:#94a3b8;}</style></head><body><main><section class="hero">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOTION — Official Rules & Info</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #010306;
+  --bg2:       #03080f;
+  --surface:   #050e1a;
+  --card:      #071525;
+  --border:    #0c2240;
+  --border2:   #0f2d54;
+  --blue:      #1565ff;
+  --blue-l:    #4d8bff;
+  --blue-gl:   #a8c8ff;
+  --gold:      #f0c040;
+  --white:     #eaf2ff;
+  --text:      #b8d4f0;
+  --muted:     #3d6080;
+  --danger:    #ff3a5c;
+  --success:   #22d98a;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── BACKGROUND EFFECTS ──────────────── */
+.bg-grid {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(21,101,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21,101,255,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.bg-glow-1 {
+  position: fixed; top: -300px; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 600px; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(21,101,255,0.12) 0%, transparent 70%);
+}
+.bg-glow-2 {
+  position: fixed; bottom: -200px; right: -200px;
+  width: 600px; height: 600px; z-index: 0; pointer-events: none;
+  background: radial-gradient(circle, rgba(21,101,255,0.07) 0%, transparent 70%);
+}
+
+/* ── NAV ─────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px; height: 64px;
+  background: rgba(1,3,6,0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px; letter-spacing: 8px;
+  color: var(--white);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--blue-l); }
+.nav-links { display: flex; gap: 0; }
+.nav-link {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); padding: 0 16px; height: 64px;
+  display: flex; align-items: center; text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.nav-link:hover { color: var(--blue-l); border-bottom-color: var(--blue); }
+.nav-discord {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px; letter-spacing: 2px;
+  color: var(--blue-l); border: 1px solid var(--blue);
+  padding: 8px 16px; text-decoration: none;
+  transition: all .2s; background: rgba(21,101,255,0.08);
+}
+.nav-discord:hover { background: var(--blue); color: var(--white); }
+
+/* ── HERO ────────────────────────────── */
+.hero {
+  position: relative; z-index: 10;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 100px 24px 60px;
+  overflow: hidden;
+}
+
+/* Animated scan line */
+.hero::after {
+  content: '';
+  position: absolute; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(21,101,255,0.6), transparent);
+  animation: scan 4s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes scan {
+  0%   { top: 10%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { top: 90%; opacity: 0; }
+}
+
+.hero-eyebrow {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px; letter-spacing: 6px;
+  color: var(--blue-l); margin-bottom: 20px;
+  opacity: 0; animation: fadeUp .6s .2s forwards;
+}
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(72px, 14vw, 160px);
+  letter-spacing: 12px; line-height: .9;
+  color: var(--white);
+  text-shadow: 0 0 80px rgba(21,101,255,0.4), 0 0 160px rgba(21,101,255,0.15);
+  opacity: 0; animation: fadeUp .6s .35s forwards;
+}
+.hero-title span {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(77,139,255,0.5);
+}
+.hero-sub {
+  font-size: 18px; font-weight: 300; letter-spacing: 2px;
+  color: var(--muted); margin-top: 16px; max-width: 500px;
+  opacity: 0; animation: fadeUp .6s .5s forwards;
+}
+
+.hero-badges {
+  display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; justify-content: center;
+  opacity: 0; animation: fadeUp .6s .65s forwards;
+}
+.badge {
+  font-family: 'Share Tech Mono', monospace; font-size: 10px;
+  letter-spacing: 3px; padding: 8px 18px;
+  border: 1px solid var(--border2); color: var(--text);
+  background: rgba(21,101,255,0.06);
+}
+.badge.hot {
+  border-color: var(--blue); color: var(--blue-l);
+  background: rgba(21,101,255,0.12);
+  box-shadow: 0 0 20px rgba(21,101,255,0.15);
+}
+
+.hero-scroll {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  font-family: 'Share Tech Mono', monospace; font-size: 9px;
+  letter-spacing: 3px; color: var(--muted);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  animation: bob 2s ease-in-out infinite;
+}
+.scroll-line { width: 1px; height: 40px; background: linear-gradient(180deg, var(--blue), transparent); }
+@keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── MAIN CONTENT ────────────────────── */
+.main { position: relative; z-index: 10; }
+
+/* ── SECTION ─────────────────────────── */
+.section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+.section-inner {
+  max-width: 1000px; margin: 0 auto; padding: 0 40px;
+}
+
+.section-header { margin-bottom: 48px; }
+.section-tag {
+  font-family: 'Share Tech Mono', monospace; font-size: 10px;
+  letter-spacing: 4px; color: var(--blue-l); margin-bottom: 8px;
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px; letter-spacing: 4px; color: var(--white);
+  line-height: 1;
+}
+.section-title span { color: var(--blue-l); }
+.section-desc {
+  font-size: 15px; font-weight: 300; color: var(--muted);
+  margin-top: 8px; max-width: 600px; line-height: 1.6;
+}
+
+/* ── FORMAT CARDS ────────────────────── */
+.format-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
+  margin-bottom: 2px;
+}
+.format-card {
+  background: var(--card); border: 1px solid var(--border);
+  padding: 28px 20px; text-align: center;
+  position: relative; overflow: hidden;
+  transition: border-color .2s, transform .2s;
+}
+.format-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  opacity: 0; transition: opacity .3s;
+}
+.format-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+.format-card:hover::before { opacity: 1; }
+.format-icon { font-size: 32px; margin-bottom: 12px; }
+.format-name {
+  font-family: 'Bebas Neue', sans-serif; font-size: 28px;
+  letter-spacing: 3px; color: var(--white); margin-bottom: 4px;
+}
+.format-type {
+  font-family: 'Share Tech Mono', monospace; font-size: 9px;
+  letter-spacing: 2px; color: var(--blue-l); margin-bottom: 12px;
+}
+.format-detail { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ── RULES ───────────────────────────── */
+.rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+
+.rule-card {
+  background: var(--card); border: 1px solid var(--border);
+  padding: 24px 28px; display: flex; gap: 20px;
+  transition: border-color .2s;
+}
+.rule-card:hover { border-color: var(--border2); }
+.rule-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 42px;
+  color: var(--blue); opacity: .35; line-height: 1;
+  flex-shrink: 0; width: 40px;
+}
+.rule-body {}
+.rule-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: 16px; letter-spacing: 1px;
+  color: var(--white); margin-bottom: 6px;
+}
+.rule-text {
+  font-size: 14px; color: var(--muted); line-height: 1.7;
+}
+.rule-text strong { color: var(--text); }
+.rule-text .flag { color: var(--danger); font-weight: 600; }
+.rule-text .good { color: var(--success); font-weight: 600; }
+
+/* Rule category label */
+.rules-cat {
+  grid-column: 1 / -1;
+  font-family: 'Share Tech Mono', monospace; font-size: 10px;
+  letter-spacing: 4px; color: var(--blue-l);
+  padding: 20px 0 8px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2px;
+}
+
+/* ── PRIZES ──────────────────────────── */
+.prizes-wrap {
+  display: grid; grid-template-columns: repeat(2,1fr); gap: 2px;
+  margin-bottom: 24px;
+}
+.prize-card {
+  background: var(--card); border: 1px solid var(--border);
+  padding: 32px 24px; text-align: center; position: relative;
+  overflow: hidden;
+}
+.prize-card.first {
+  border-color: var(--gold);
+  background: linear-gradient(160deg, #1a1200, var(--card));
+  box-shadow: 0 0 60px rgba(240,192,64,0.12);
+}
+.prize-card.first::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.prize-card.second::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, #b0c4d8, transparent);
+}
+.prize-place {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px; line-height: 1; margin-bottom: 4px;
+}
+.prize-card.first  .prize-place { color: var(--gold); text-shadow: 0 0 30px rgba(240,192,64,.4); }
+.prize-card.second .prize-place { color: #b0c4d8; }
+.prize-medal { font-size: 28px; margin-bottom: 12px; display: block; }
+.prize-name {
+  font-family: 'Share Tech Mono', monospace; font-size: 10px;
+  letter-spacing: 3px; color: var(--muted); margin-bottom: 16px;
+}
+.prize-reward {
+  font-family: 'Bebas Neue', sans-serif; font-size: 22px;
+  letter-spacing: 2px; color: var(--white); margin-bottom: 6px;
+}
+.prize-note { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+.prize-info {
+  background: var(--card); border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  padding: 16px 20px; margin-top: 2px;
+  font-size: 14px; color: var(--text); line-height: 1.7;
+}
+.prize-info strong { color: var(--blue-l); }
+
+/* ── STAFF ───────────────────────────── */
+.staff-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.staff-card {
+  background: var(--card); border: 1px solid var(--border);
+  padding: 24px; display: flex; gap: 16px; align-items: flex-start;
+  transition: border-color .2s;
+}
+.staff-card:hover { border-color: var(--border2); }
+.staff-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 0;
+  overflow: hidden;              /* allows image crop */
+  flex-shrink: 0;
+  border: 1px solid var(--border2);
+}
+
+/* Image inside avatar */
+.staff-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;             /* keeps image proportional */
+  display: block;
+}
+.staff-info {}
+.staff-role {
+  font-family: 'Share Tech Mono', monospace; font-size: 9px;
+  letter-spacing: 2px; color: var(--blue-l); margin-bottom: 3px;
+}
+.staff-name {
+  font-weight: 700; font-size: 16px; color: var(--white);
+  letter-spacing: .5px; margin-bottom: 2px;
+}
+.staff-discord { font-size: 12px; color: var(--muted); }
+.staff-placeholder {
+  font-style: italic; color: var(--border2); font-size: 13px;
+}
+
+/* ── SOCIALS ─────────────────────────── */
+.socials-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+.social-card {
+  background: var(--card); border: 1px solid var(--border);
+  padding: 28px 20px; text-align: center;
+  text-decoration: none; color: var(--text);
+  transition: border-color .2s, background .2s;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.social-card:hover { border-color: var(--blue); background: rgba(21,101,255,0.06); }
+.social-icon { font-size: 32px; }
+.social-platform {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px; letter-spacing: 3px; color: var(--white);
+}
+.social-handle {
+  font-family: 'Share Tech Mono', monospace; font-size: 11px;
+  color: var(--blue-l); letter-spacing: 1px;
+}
+.social-desc { font-size: 12px; color: var(--muted); }
+
+/* Discord special card */
+.discord-banner {
+  background: linear-gradient(135deg, #040d1a, #071e3d);
+  border: 1px solid var(--blue);
+  padding: 40px; text-align: center;
+  position: relative; overflow: hidden;
+  box-shadow: 0 0 60px rgba(21,101,255,0.1);
+}
+.discord-banner::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--blue-l), transparent);
+}
+.discord-banner::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+}
+.discord-icon { font-size: 48px; margin-bottom: 12px; display: block; }
+.discord-title {
+  font-family: 'Bebas Neue', sans-serif; font-size: 40px;
+  letter-spacing: 5px; color: var(--white); margin-bottom: 8px;
+}
+.discord-sub {
+  font-size: 15px; font-weight: 300; color: var(--muted);
+  margin-bottom: 24px; max-width: 400px; margin-left: auto; margin-right: auto;
+}
+.discord-btn {
+  display: inline-block;
+  font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 4px;
+  color: var(--white); background: var(--blue);
+  padding: 14px 40px; text-decoration: none;
+  transition: all .2s;
+  box-shadow: 0 0 40px rgba(21,101,255,0.4);
+}
+.discord-btn:hover {
+  background: var(--blue-l); box-shadow: 0 0 60px rgba(21,101,255,0.6);
+  transform: translateY(-2px);
+}
+
+/* ── FOOTER ──────────────────────────── */
+.footer {
+  position: relative; z-index: 10;
+  border-top: 1px solid var(--border);
+  padding: 32px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1000px; margin: 0 auto;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px; letter-spacing: 6px; color: var(--muted);
+}
+.footer-logo span { color: var(--blue); }
+.footer-text {
+  font-family: 'Share Tech Mono', monospace; font-size: 10px;
+  letter-spacing: 2px; color: var(--border2); text-align: right;
+}
+
+/* ── DIVIDER ─────────────────────────── */
+.rule-divider {
+  height: 1px; background: var(--border); margin: 4px 0;
+}
+
+/* ── UTILITIES ───────────────────────── */
+.chip {
+  display: inline-block;
+  font-family: 'Share Tech Mono', monospace; font-size: 9px;
+  letter-spacing: 2px; padding: 3px 10px; border: 1px solid;
+  margin: 2px;
+}
+.chip-blue  { color: var(--blue-l);  border-color: var(--blue);    background: rgba(21,101,255,.08); }
+.chip-red   { color: var(--danger);  border-color: var(--danger);  background: rgba(255,58,92,.06); }
+.chip-green { color: var(--success); border-color: var(--success); background: rgba(34,217,138,.06); }
+.chip-gold  { color: var(--gold);    border-color: var(--gold);    background: rgba(240,192,64,.06); }
+
+/* ── RESPONSIVE ──────────────────────── */
+@media(max-width:768px){
+  .nav-links { display: none; }
+  .format-grid  { grid-template-columns: repeat(2,1fr); }
+  .rules-grid   { grid-template-columns: 1fr; }
+  .prizes-wrap  { grid-template-columns: 1fr; }
+  .staff-grid   { grid-template-columns: 1fr; }
+  .socials-grid { grid-template-columns: repeat(2,1fr); }
+  .section-inner { padding: 0 20px; }
+  .nav { padding: 0 20px; }
+  .hero-title { font-size: 64px; }
+}
+
+@media print {
+  .nav, .hero-scroll, .bg-grid, .bg-glow-1, .bg-glow-2 { display: none; }
+  .hero { min-height: auto; padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glow-1"></div>
+<div class="bg-glow-2"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">MOTI<span>ON</span></a>
+  <div class="nav-links">
+    <a class="nav-link" href="#formats">Formats</a>
+    <a class="nav-link" href="#rules">Rules</a>
+    <a class="nav-link" href="#prizes">Prizes</a>
+    <a class="nav-link" href="#staff">Staff</a>
+    <a class="nav-link" href="#socials">Socials</a>
+  </div>
+  <a class="nav-discord" href="https://discord.gg/Ynz7Xynd4Z" target="_blank">JOIN DISCORD →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
   <div class="hero-eyebrow">// ROCKET LEAGUE ESPORTS COMMUNITY</div>
   <div class="hero-title">MOT<span>I</span>ON</div>
-  <div class="hero-sub">Official Rules, Formats &amp; Info — Read before you compete.</div>
+  <div class="hero-sub">Official Rules, Formats & Info — Read before you compete.</div>
   <div class="hero-badges">
     <div class="badge hot"> SEASON 1 ACTIVE</div>
-    <div class="badge">1V1 · 3V3 · 4V4</div>
+    <div class="badge">2V2 · 3V3 · 4V4</div>
     <div class="badge">ROCKET LEAGUE</div>
     <div class="badge">OPEN TO ALL RANKS</div>
   </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    SCROLL
+  </div>
 </section>
 
-<section class="section" id="formats">
+<main class="main">
+
+  <!-- ── FORMATS ──────────────────────── -->
+  <section class="section" id="formats">
     <div class="section-inner">
       <div class="section-header">
         <div class="section-tag">// 01 — GAME MODES</div>
@@ -18,33 +514,59 @@
         <div class="section-desc">Motion runs three competitive formats. Each has its own bracket, rules, and prize pool. Check Discord for which formats are active in the current season.</div>
       </div>
 
-      <div class="format-grid"><div class="format-card"><span class="format-icon">⚡</span><div class="format-name">2V2</div><div class="format-type">DOUBLES</div><div class="format-detail">High-speed doubles. BO3 early rounds, BO5 semis and finals. Teams of 2 + 1 registered sub.</div></div><div class="format-card"><span class="format-icon">🚀</span><div class="format-name">3V3</div><div class="format-type">STANDARD</div><div class="format-detail">The flagship format. Full team coordination. BO3 → BO5 finals. Our most common tournament.</div></div><div class="format-card"><span class="format-icon">🔥</span><div class="format-name">4V4</div><div class="format-type">CHAOS</div><div class="format-detail">High chaos, high fun. BO3 throughout. Teams of 4 — all must be registered. No mid-series subs.</div></div></div>
+      <div class="format-grid">
+        <div class="format-card">
+          <div class="format-icon">⚡</div>
+          <div class="format-name">2V2</div>
+          <div class="format-type">DOUBLES</div>
+          <div class="format-detail">High-speed doubles. BO3 early rounds, BO5 semis and finals. Teams of 2 + 1 registered sub.</div>
+        </div>
+        <div class="format-card">
+          <div class="format-icon">🚀</div>
+          <div class="format-name">3V3</div>
+          <div class="format-type">STANDARD</div>
+          <div class="format-detail">The flagship format. Full team coordination. BO3 → BO5 finals. Our most common tournament.</div>
+        </div>
+        <div class="format-card">
+          <div class="format-icon">🔥</div>
+          <div class="format-name">4V4</div>
+          <div class="format-type">CHAOS</div>
+          <div class="format-detail">High chaos, high fun. BO3 throughout. Teams of 4 — all must be registered. No mid-series subs.</div>
+        </div>
+      </div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-top:2px;">
         <div style="background:var(--card);border:1px solid var(--border);padding:20px 24px;">
           <div style="font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--blue-l);margin-bottom:8px;">SERIES FORMAT</div>
-          <div style="font-size:14px;color:var(--text);line-height:1.8;white-space:pre-line">Round 1 / QF: BO3
-Semifinals: BO5
-Grand Finals: BO5</div>
+          <div style="font-size:14px;color:var(--text);line-height:1.8;">
+            Round 1 / QF: <strong style="color:var(--white)">BO3</strong><br>
+            Semifinals: <strong style="color:var(--white)">BO5</strong><br>
+            Grand Finals: <strong style="color:var(--white)">BO5</strong><br>
+          </div>
         </div>
         <div style="background:var(--card);border:1px solid var(--border);padding:20px 24px;">
           <div style="font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--blue-l);margin-bottom:8px;">BRACKET TYPE</div>
-          <div style="font-size:14px;color:var(--text);line-height:1.8;white-space:pre-line">Regular cups: Single Elim
-Season finals: Double Elim
-Weekly cups: Single Elim
-Check Discord for current event type.</div>
+          <div style="font-size:14px;color:var(--text);line-height:1.8;">
+            Regular cups: <strong style="color:var(--white)">Single Elim</strong><br>
+            Season finals: <strong style="color:var(--white)">Double Elim</strong><br>
+            Weekly cups: <strong style="color:var(--white)">Single Elim</strong><br>
+            Check Discord for current event type.
+          </div>
         </div>
         <div style="background:var(--card);border:1px solid var(--border);padding:20px 24px;">
           <div style="font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--blue-l);margin-bottom:8px;">SERVER SETTINGS</div>
-          <div style="font-size:14px;color:var(--text);line-height:1.8;white-space:pre-line">Mutators: OFF
-Rumble/Heatseeker: OFF
-Server region: Closest mutual
-Lobby: Private / Password</div>
+          <div style="font-size:14px;color:var(--text);line-height:1.8;">
+            Mutators: <strong style="color:var(--white)">OFF</strong><br>
+            Rumble/Heatseeker: <strong style="color:var(--white)">OFF</strong><br>
+            Server region: <strong style="color:var(--white)">Closest mutual</strong><br>
+            Lobby: <strong style="color:var(--white)">Private / Password</strong>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ── RULES ─────────────────────────── -->
   <section class="section" id="rules">
     <div class="section-inner">
       <div class="section-header">
@@ -55,14 +577,121 @@ Lobby: Private / Password</div>
 
       <div class="rules-grid">
 
-<div class="rules-cat">REGISTRATION &amp; ELIGIBILITY</div><div class="rule-card"><div class="rule-num">01</div><div class="rule-body"><div class="rule-title">Account Verification</div><div class="rule-text">All players must submit a <strong>Tracker.gg profile link</strong> during registration. Your account is verified by admins before the tournament. No link = no entry. No exceptions.</div></div></div><div class="rule-card"><div class="rule-num">02</div><div class="rule-body"><div class="rule-title">Main Accounts Only</div><div class="rule-text"><span class="flag">Smurfing is an immediate permanent ban.</span> You must compete on the exact account you registered. Alt accounts, boosted accounts, or accounts with misrepresented ranks are forbidden across all formats.</div></div></div><div class="rule-card"><div class="rule-num">03</div><div class="rule-body"><div class="rule-title">One Team Per Player</div><div class="rule-text">Players may only be on <strong>one roster per tournament</strong>. Players found on multiple rosters are removed from both teams. Rosters lock at the registration deadline — no additions after that point.</div></div></div><div class="rule-card"><div class="rule-num">04</div><div class="rule-body"><div class="rule-title">Substitutes</div><div class="rule-text">Teams may register <strong>1 sub per team</strong> during sign-up. Sub must be registered before the tournament — no day-of additions unless an admin approves in writing before the first match.</div></div></div>
-        <div class="rules-cat">MATCH RULES</div><div class="rule-card"><div class="rule-num">05</div><div class="rule-body"><div class="rule-title">Lobby Creation</div><div class="rule-text">The <strong>higher seeded team</strong> creates the private lobby. Password is shared via Discord DM to opponent captain only. Default: closest mutual region. Region disputes go to admin before match starts.</div></div></div><div class="rule-card"><div class="rule-num">06</div><div class="rule-body"><div class="rule-title">Ready-Up Window</div><div class="rule-text">Teams have <strong>5 minutes</strong> after their match is called to be in the lobby. After 5 minutes, the opposing team may request a forfeit win. <span class="flag">This is strictly enforced.</span> Be ready before your match is called.</div></div></div><div class="rule-card"><div class="rule-num">07</div><div class="rule-body"><div class="rule-title">Substitutions Mid-Series</div><div class="rule-text">Subs may only swap <strong>between games</strong> in a series — never during a live game. For 4v4: all 4 players must be registered. No mid-series swaps in 4v4 under any circumstance.</div></div></div><div class="rule-card"><div class="rule-num">08</div><div class="rule-body"><div class="rule-title">Disconnections</div><div class="rule-text">If a player disconnects <strong>before a goal is scored</strong>, both teams may agree to replay that game. If a goal was already scored, the game continues. Full lobby crashes are reviewed by admin only.</div></div></div>
-        <div class="rules-cat">SCORE REPORTING &amp; DISPUTES</div><div class="rule-card"><div class="rule-num">09</div><div class="rule-body"><div class="rule-title">Reporting Results</div><div class="rule-text">Winning team captain posts the final score + <strong>screenshot</strong> in <strong>#match-results</strong> within 5 minutes of the series ending. Losing captain confirms with ✅. Admin updates bracket.</div></div></div><div class="rule-card"><div class="rule-num">10</div><div class="rule-body"><div class="rule-title">Disputes</div><div class="rule-text">Disputes must be raised in <strong>#disputes within 10 minutes</strong> of result. Evidence required from both teams. Admin reviews and rules — decision is <span class="flag">final and immediate</span>. No further appeals.</div></div></div>
-        <div class="rules-cat">CONDUCT</div><div class="rule-card"><div class="rule-num">11</div><div class="rule-body"><div class="rule-title">Sportsmanship</div><div class="rule-text">Motion expects <span class="good">GGs</span>. Toxic behavior, harassment, slurs, or targeted abuse toward any player, admin, or spectator — in-game, Discord, or publicly — results in <span class="flag">immediate disqualification</span>.</div></div></div><div class="rule-card"><div class="rule-num">12</div><div class="rule-body"><div class="rule-title">Intentional Griefing</div><div class="rule-text">Intentional self-destruction, AFK play, or any deliberate attempt to throw a match is treated as a conduct violation. Admins may review replay footage. Confirmed griefers are <span class="flag">disqualified</span>.</div></div></div><div class="rule-card"><div class="rule-num">13</div><div class="rule-body"><div class="rule-title">Repeat Violations</div><div class="rule-text">First major violation = disqualification from current event. Repeated violations = <span class="flag">permanent server ban</span>. Motion is a community — protect it. Admins reserve the right to ban at any time for conduct deemed harmful to the community.</div></div></div><div class="rule-card"><div class="rule-num">14</div><div class="rule-body"><div class="rule-title">Admin Authority</div><div class="rule-text">All admin decisions are <strong>final</strong>. Continued public complaints after a final ruling may result in disciplinary action. Admins are volunteers — respect them. Contact an admin privately for any serious concerns.</div></div></div>
+        <div class="rules-cat">REGISTRATION & ELIGIBILITY</div>
+
+        <div class="rule-card">
+          <div class="rule-num">01</div>
+          <div class="rule-body">
+            <div class="rule-title">Account Verification</div>
+            <div class="rule-text">All players must submit a <strong>Tracker.gg profile link</strong> during registration. Your account is verified by admins before the tournament. No link = no entry. No exceptions.</div>
+          </div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">02</div>
+          <div class="rule-body">
+            <div class="rule-title">Main Accounts Only</div>
+            <div class="rule-text"><span class="flag">Smurfing is an immediate permanent ban.</span> You must compete on the exact account you registered. Alt accounts, boosted accounts, or accounts with misrepresented ranks are forbidden across all formats.</div>
+          </div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">03</div>
+          <div class="rule-body">
+            <div class="rule-title">One Team Per Player</div>
+            <div class="rule-text">Players may only be on <strong>one roster per tournament</strong>. Players found on multiple rosters are removed from both teams. Rosters lock at the registration deadline — no additions after that point.</div>
+          </div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">04</div>
+          <div class="rule-body">
+            <div class="rule-title">Substitutes</div>
+            <div class="rule-text">Teams may register <strong>1 sub per team</strong> during sign-up. Sub must be registered before the tournament — no day-of additions unless an admin approves in writing before the first match.</div>
+          </div>
+        </div>
+
+        <div class="rules-cat">MATCH RULES</div>
+
+        <div class="rule-card">
+          <div class="rule-num">05</div>
+          <div class="rule-body">
+            <div class="rule-title">Lobby Creation</div>
+            <div class="rule-text">The <strong>higher seeded team</strong> creates the private lobby. Password is shared via Discord DM to opponent captain only. Default: closest mutual region. Region disputes go to admin before match starts.</div>
+          </div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">06</div>
+          <div class="rule-body">
+            <div class="rule-title">Ready-Up Window</div>
+            <div class="rule-text">Teams have <strong>5 minutes</strong> after their match is called to be in the lobby. After 5 minutes, the opposing team may request a forfeit win. <span class="flag">This is strictly enforced.</span> Be ready before your match is called.</div>
+          </div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">07</div>
+          <div class="rule-body">
+            <div class="rule-title">Substitutions Mid-Series</div>
+            <div class="rule-text">Subs may only swap <strong>between games</strong> in a series — never during a live game. For 4v4: all 4 players must be registered. No mid-series swaps in 4v4 under any circumstance.</div>
+          </div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">08</div>
+          <div class="rule-body">
+            <div class="rule-title">Disconnections</div>
+            <div class="rule-text">If a player disconnects <strong>before a goal is scored</strong>, both teams may agree to replay that game. If a goal was already scored, the game continues. Full lobby crashes are reviewed by admin only.</div>
+          </div>
+        </div>
+
+        <div class="rules-cat">SCORE REPORTING & DISPUTES</div>
+
+        <div class="rule-card">
+          <div class="rule-num">09</div>
+          <div class="rule-body">
+            <div class="rule-title">Reporting Results</div>
+            <div class="rule-text">Winning team captain posts the final score + <strong>screenshot</strong> in <strong>#match-results</strong> within 5 minutes of the series ending. Losing captain confirms with ✅. Admin updates bracket.</div>
+          </div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">10</div>
+          <div class="rule-body">
+            <div class="rule-title">Disputes</div>
+            <div class="rule-text">Disputes must be raised in <strong>#disputes within 10 minutes</strong> of result. Evidence required from both teams. Admin reviews and rules — decision is <span class="flag">final and immediate</span>. No further appeals.</div>
+          </div>
+        </div>
+
+        <div class="rules-cat">CONDUCT</div>
+
+        <div class="rule-card">
+          <div class="rule-num">11</div>
+          <div class="rule-body">
+            <div class="rule-title">Sportsmanship</div>
+            <div class="rule-text">Motion expects <span class="good">GGs</span>. Toxic behavior, harassment, slurs, or targeted abuse toward any player, admin, or spectator — in-game, Discord, or publicly — results in <span class="flag">immediate disqualification</span>.</div>
+          </div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">12</div>
+          <div class="rule-body">
+            <div class="rule-title">Intentional Griefing</div>
+            <div class="rule-text">Intentional self-destruction, AFK play, or any deliberate attempt to throw a match is treated as a conduct violation. Admins may review replay footage. Confirmed griefers are <span class="flag">disqualified</span>.</div>
+          </div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">13</div>
+          <div class="rule-body">
+            <div class="rule-title">Repeat Violations</div>
+            <div class="rule-text">First major violation = disqualification from current event. Repeated violations = <span class="flag">permanent server ban</span>. Motion is a community — protect it. Admins reserve the right to ban at any time for conduct deemed harmful to the community.</div>
+          </div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">14</div>
+          <div class="rule-body">
+            <div class="rule-title">Admin Authority</div>
+            <div class="rule-text">All admin decisions are <strong>final</strong>. Continued public complaints after a final ruling may result in disciplinary action. Admins are volunteers — respect them. Contact an admin privately for any serious concerns.</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
+  <!-- ── PRIZES ─────────────────────────── -->
   <section class="section" id="prizes">
     <div class="section-inner">
       <div class="section-header">
@@ -89,7 +718,7 @@ Lobby: Private / Password</div>
       </div>
 
       <div class="prize-info">
-        <strong>MVP Award:</strong> The player with the highest Strength Rating across all matches (tracked via our stats system) receives the Tournament MVP role and a special callout in the results post.
+        <strong>MVP Award:</strong> The player with the highest Strength Rating across all matches (tracked via our stats system) receives the <strong>Tournament MVP</strong> role and a special callout in the results post. Shot%, Goals/Game, Assists, Saves, and Score/Game all count toward your rating.
       </div>
 
       <div class="prize-info" style="border-left-color:var(--gold);margin-top:2px;">
@@ -98,6 +727,7 @@ Lobby: Private / Password</div>
     </div>
   </section>
 
+  <!-- ── STAFF ──────────────────────────── -->
   <section class="section" id="staff">
     <div class="section-inner">
       <div class="section-header">
@@ -107,12 +737,111 @@ Lobby: Private / Password</div>
       </div>
 
       <div class="staff-grid">
-<div class="staff-card"><div class="staff-avatar"><div style="background:var(--border);color:var(--muted);width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:20px;">?</div></div><div class="staff-info"><div class="staff-role">HEAD ORGANIZER</div><div class="staff-name">Uncle Rico</div><div class="staff-discord">@Uncle Rico</div></div></div>
-        <div class="staff-card"><div class="staff-avatar"><div style="background:var(--border);color:var(--muted);width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:20px;">?</div></div><div class="staff-info"><div class="staff-role">BRACKET ADMIN</div><div class="staff-name">Escanor</div><div class="staff-discord">@Escanor</div></div></div>
+        <div class="staff-card">
+          <div class="staff-avatar">
+            <img src="images/unclerico.png" alt="Uncle Rico">
+         </div>
+         <div class="staff-info">
+           <div class="staff-role">HEAD ORGANIZER</div>
+           <div class="staff-name">Uncle Rico</div>
+           <div class="staff-discord">@Uncle Rico</div>
+         </div>
+        </div>
+        <div class="staff-card">
+          <div class="staff-avatar">
+           <img src="images/escanor.jpg" alt="Escanor">
+          </div>
+          <div class="staff-info">
+            <div class="staff-role">BRACKET ADMIN</div>
+            <div class="staff-name">Escanor</div>
+            <div class="staff-discord">@Escanor</div>
+          </div>
+        </div>
+        <div class="staff-card" style="border-style:dashed;opacity:.5;">
+          <div class="staff-avatar" style="background:var(--border);color:var(--muted);">?</div>
+          <div class="staff-info">
+            <div class="staff-role">DISPUTE ADMIN</div>
+            <div class="staff-name staff-placeholder">Recruiting — DM Head Organizer</div>
+          </div>
+        </div>
+        <div class="staff-card" style="border-style:dashed;opacity:.5;">
+          <div class="staff-avatar" style="background:var(--border);color:var(--muted);">?</div>
+          <div class="staff-info">
+            <div class="staff-role">COMMS / HYPE</div>
+            <div class="staff-name staff-placeholder">Recruiting — DM Head Organizer</div>
+          </div>
+        </div>
+        <div class="staff-card" style="border-style:dashed;opacity:.5;">
+          <div class="staff-avatar" style="background:var(--border);color:var(--muted);">?</div>
+          <div class="staff-info">
+            <div class="staff-role">STATS ADMIN</div>
+            <div class="staff-name staff-placeholder">Recruiting — DM Head Organizer</div>
+          </div>
+        </div>
+        <div class="staff-card" style="border-style:dashed;opacity:.5;">
+          <div class="staff-avatar" style="background:var(--border);color:var(--muted);">?</div>
+          <div class="staff-info">
+            <div class="staff-role">OPEN ROLE</div>
+            <div class="staff-name staff-placeholder">Recruiting — DM Head Organizer</div>
+          </div>
+        </div>
       </div>
 
       <div style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--blue-l);padding:16px 20px;margin-top:2px;font-size:14px;color:var(--text);line-height:1.7;">
         <strong style="color:var(--blue-l)">Contact Protocol:</strong> For match disputes → DM Dispute Admin or post in #disputes. For bracket issues → DM Bracket Admin. For everything else → DM Head Organizer. Please do not spam multiple admins with the same issue.
       </div>
     </div>
-  </section></main></body></html>
+  </section>
+
+  <!-- ── SOCIALS ────────────────────────── -->
+  <section class="section" id="socials">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">// 05 — FIND US</div>
+        <div class="section-title">FOLLOW <span>MOTION</span></div>
+        <div class="section-desc">Stay up to date on tournaments, brackets, results, and highlights across all our channels.</div>
+      </div>
+
+      <!-- DISCORD FEATURED -->
+      <div class="discord-banner" style="margin-bottom:2px;">
+        <span class="discord-icon">💬</span>
+        <div class="discord-title">JOIN THE SERVER</div>
+        <div class="discord-sub">Every tournament is run through Discord. Join to register, get match updates, and connect with the Motion community.</div>
+        <a class="discord-btn" href="https://discord.gg/Ynz7Xynd4Z" target="_blank">discord.gg/MOTION</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer style="position:relative;z-index:10;border-top:1px solid var(--border);margin-top:0;">
+  <div class="footer">
+    <div>
+      <div class="footer-logo">MOTI<span>ON</span></div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--border2);margin-top:4px;">ROCKET LEAGUE ESPORTS</div>
+    </div>
+    <div class="footer-text">
+      Rules subject to change — check Discord for updates.<br>
+      © Motion Rules · All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+// Smooth active nav highlighting on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navLinks.forEach(l => {
+    l.style.color = l.getAttribute('href') === '#'+current ? 'var(--blue-l)' : '';
+    l.style.borderBottomColor = l.getAttribute('href') === '#'+current ? 'var(--blue)' : '';
+  });
+});
+</script>
+</body>
+</html>
