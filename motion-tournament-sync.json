@@ -4,26 +4,7 @@
   "draftSnapshot": null,
   "stagingApproved": [],
   "matchResults": [],
-  "scheduledMatches": [
-    {
-      "id": "sched-1773640886026-ftvqped",
-      "round": "quarterfinals",
-      "matchSlot": "1",
-      "teamA": {
-        "name": "Team A"
-      },
-      "teamB": {
-        "name": "Team B"
-      },
-      "startAt": "2026-03-16T06:01:26.026Z",
-      "tournamentId": 8,
-      "lastUpdated": "2026-03-16T06:41:44.615Z",
-      "status": "calling",
-      "startRequestedAt": "2026-03-16T06:41:44.615Z",
-      "discordChannelId": null,
-      "createdAt": "2026-03-16T06:01:26.026Z"
-    }
-  ],
+  "scheduledMatches": [],
   "bracketConfig": {
     "tournamentId": 8,
     "teamSize": 1,
@@ -58,7 +39,7 @@
   "recentChanges": {
     "tournament-schedule": {
       "by": "Uncle Rico",
-      "at": "2026-03-16T06:41:44.616Z"
+      "at": "2026-03-16T06:41:50.344Z"
     },
     "tournament-bracket": {
       "by": "Uncle Rico",
@@ -66,5 +47,5 @@
     }
   },
   "stripRolesRequest": null,
-  "lastUpdated": "2026-03-16T06:41:44.886Z"
+  "lastUpdated": "2026-03-16T06:41:50.585Z"
 }
