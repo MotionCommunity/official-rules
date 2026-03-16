@@ -63,8 +63,16 @@
         "discordRoleId": "1483231735834480822"
       }
     ],
-    "roster": [],
-    "updatedAt": "2026-03-16T23:15:09.162Z"
+    "roster": [
+      {
+        "id": 2,
+        "ign": "Escanor",
+        "discordUsername": "TikTok_Escanor",
+        "discordUserId": null,
+        "draftedToTeam": "Legacy"
+      }
+    ],
+    "updatedAt": "2026-03-16T23:15:19.100Z"
   },
   "recentChanges": {
     "tournament-schedule": {
@@ -73,9 +81,9 @@
     },
     "tournament-bracket": {
       "by": "Uncle Rico",
-      "at": "2026-03-16T23:15:09.163Z"
+      "at": "2026-03-16T23:15:19.100Z"
     }
   },
   "stripRolesRequest": null,
-  "lastUpdated": "2026-03-16T23:15:10.463Z"
+  "lastUpdated": "2026-03-16T23:15:20.417Z"
 }
