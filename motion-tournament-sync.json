@@ -25,7 +25,7 @@
   ],
   "bracketConfig": {
     "tournamentId": 9,
-    "updatedAt": "2026-03-16T23:34:23.552Z",
+    "updatedAt": "2026-03-16T23:53:37.750Z",
     "rounds": [
       {
         "roundId": "r1",
@@ -42,22 +42,22 @@
           {
             "matchId": "r1-m2",
             "slot": "2",
-            "teamA": "Ignition",
-            "teamB": "Impact",
+            "teamA": "Phantom",
+            "teamB": "Valor",
             "winner": null
           },
           {
             "matchId": "r1-m3",
             "slot": "3",
             "teamA": "Catalyst",
-            "teamB": "Crest",
+            "teamB": "Impact",
             "winner": null
           },
           {
             "matchId": "r1-m4",
             "slot": "4",
-            "teamA": "Valor",
-            "teamB": "Phantom",
+            "teamA": "Ignition",
+            "teamB": "Crest",
             "winner": null
           }
         ]
@@ -97,7 +97,11 @@
           }
         ]
       }
-    ]
+    ],
+    "tournamentName": "First Test 2v2 tournament",
+    "bracketType": "SingleElimination",
+    "seriesFormat": "BestOf5",
+    "teamCount": 8
   },
   "recentChanges": {
     "tournament-schedule": {
@@ -106,9 +110,9 @@
     },
     "tournament-bracket": {
       "by": "Uncle Rico",
-      "at": "2026-03-16T23:34:23.552Z"
+      "at": "2026-03-16T23:53:37.750Z"
     }
   },
   "stripRolesRequest": null,
-  "lastUpdated": "2026-03-16T23:34:24.877Z"
+  "lastUpdated": "2026-03-16T23:53:39.094Z"
 }
