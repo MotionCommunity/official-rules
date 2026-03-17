@@ -21,116 +21,61 @@
       "status": "scheduled",
       "discordChannelId": null,
       "createdAt": "2026-03-16T06:51:30.753Z"
-    },
-    {
-      "id": "sched-1773726396843-t0wv43b",
-      "round": "quarterfinals",
-      "matchSlot": "1",
-      "teamA": {
-        "name": "Team A"
-      },
-      "teamB": {
-        "name": "Team B"
-      },
-      "startAt": "2026-03-17T05:46:36.843Z",
-      "tournamentId": 9,
-      "lastUpdated": "2026-03-17T05:46:36.843Z",
-      "status": "calling",
-      "startRequestedAt": "2026-03-17T05:46:36.843Z",
-      "discordChannelId": null,
-      "createdAt": "2026-03-17T05:46:36.843Z"
     }
   ],
   "bracketConfig": {
     "tournamentId": 9,
-    "updatedAt": "2026-03-17T00:00:10.693Z",
-    "rounds": [
+    "teamSize": 2,
+    "seriesFormat": "BestOf5",
+    "bracketType": "SingleElimination",
+    "roundSeriesFormats": [],
+    "teamConfig": [
       {
-        "roundId": "r1",
-        "name": "Round 1",
-        "order": 0,
-        "matches": [
-          {
-            "matchId": "r1-m1",
-            "slot": "1",
-            "teamA": "Legacy",
-            "teamB": null,
-            "winner": null
-          },
-          {
-            "matchId": "r1-m2",
-            "slot": "2",
-            "teamA": null,
-            "teamB": null,
-            "winner": null
-          },
-          {
-            "matchId": "r1-m3",
-            "slot": "3",
-            "teamA": null,
-            "teamB": null,
-            "winner": null
-          },
-          {
-            "matchId": "r1-m4",
-            "slot": "4",
-            "teamA": null,
-            "teamB": null,
-            "winner": null
-          }
-        ]
+        "name": "Legacy",
+        "discordRoleId": "1482963996804911194"
       },
       {
-        "roundId": "r2",
-        "name": "Round 2",
-        "order": 1,
-        "matches": [
-          {
-            "matchId": "r2-m1",
-            "slot": "1",
-            "teamA": null,
-            "teamB": null,
-            "winner": null
-          },
-          {
-            "matchId": "r2-m2",
-            "slot": "2",
-            "teamA": null,
-            "teamB": null,
-            "winner": null
-          }
-        ]
+        "name": "Genesis",
+        "discordRoleId": "1482964123527549072"
       },
       {
-        "roundId": "r3",
-        "name": "Semi-finals",
-        "order": 2,
-        "matches": [
-          {
-            "matchId": "r3-m1",
-            "slot": "1",
-            "teamA": null,
-            "teamB": null,
-            "winner": null
-          }
-        ]
+        "name": "Ignition",
+        "discordRoleId": "1483231567844479196"
+      },
+      {
+        "name": "Impact",
+        "discordRoleId": "1483231621170594027"
+      },
+      {
+        "name": "Catalyst",
+        "discordRoleId": "1483231647460622466"
+      },
+      {
+        "name": "Crest",
+        "discordRoleId": "1483231684538400949"
+      },
+      {
+        "name": "Valor",
+        "discordRoleId": "1483231710018670765"
+      },
+      {
+        "name": "Phantom",
+        "discordRoleId": "1483231735834480822"
       }
     ],
-    "tournamentName": "First Test 2v2 tournament",
-    "bracketType": "SingleElimination",
-    "seriesFormat": "BestOf5",
-    "teamCount": 8
+    "roster": [],
+    "updatedAt": "2026-03-17T05:46:43.270Z"
   },
   "recentChanges": {
     "tournament-schedule": {
       "by": "Uncle Rico",
-      "at": "2026-03-17T05:46:36.844Z"
+      "at": "2026-03-16T06:51:30.753Z"
     },
     "tournament-bracket": {
       "by": "Uncle Rico",
-      "at": "2026-03-17T00:17:06.126Z"
+      "at": "2026-03-17T05:46:43.271Z"
     }
   },
   "stripRolesRequest": null,
-  "lastUpdated": "2026-03-17T05:46:37.223Z"
+  "lastUpdated": "2026-03-17T05:46:43.576Z"
 }
