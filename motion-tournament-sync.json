@@ -21,6 +21,26 @@
       "status": "scheduled",
       "discordChannelId": null,
       "createdAt": "2026-03-16T06:51:30.753Z"
+    },
+    {
+      "id": "sched-1773726363856-gs3sgi9",
+      "round": "default",
+      "matchSlot": "1",
+      "teamA": {
+        "name": "Legacy",
+        "discordRoleId": "1482963996804911194"
+      },
+      "teamB": {
+        "name": "Genesis",
+        "discordRoleId": "1482964123527549072"
+      },
+      "startAt": "2026-03-17T05:46:03.856Z",
+      "tournamentId": 9,
+      "lastUpdated": "2026-03-17T05:46:03.856Z",
+      "status": "calling",
+      "startRequestedAt": "2026-03-17T05:46:03.856Z",
+      "discordChannelId": null,
+      "createdAt": "2026-03-17T05:46:03.856Z"
     }
   ],
   "bracketConfig": {
@@ -106,7 +126,7 @@
   "recentChanges": {
     "tournament-schedule": {
       "by": "Uncle Rico",
-      "at": "2026-03-16T06:51:30.753Z"
+      "at": "2026-03-17T05:46:03.857Z"
     },
     "tournament-bracket": {
       "by": "Uncle Rico",
@@ -114,5 +134,5 @@
     }
   },
   "stripRolesRequest": null,
-  "lastUpdated": "2026-03-17T00:17:07.499Z"
+  "lastUpdated": "2026-03-17T05:46:04.205Z"
 }
