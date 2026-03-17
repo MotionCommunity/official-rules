@@ -64,7 +64,7 @@
       }
     ],
     "roster": [],
-    "updatedAt": "2026-03-17T05:50:33.199Z"
+    "updatedAt": "2026-03-17T05:46:43.270Z"
   },
   "recentChanges": {
     "tournament-schedule": {
@@ -73,9 +73,20 @@
     },
     "tournament-bracket": {
       "by": "Uncle Rico",
-      "at": "2026-03-17T05:50:33.200Z"
+      "at": "2026-03-17T05:46:43.271Z"
     }
   },
-  "stripRolesRequest": null,
-  "lastUpdated": "2026-03-17T05:50:33.502Z"
+  "stripRolesRequest": {
+    "at": "2026-03-17T05:50:57.653Z",
+    "roster": [],
+    "teamConfig": [
+      {
+        "name": "Legacy"
+      },
+      {
+        "name": "Alpha"
+      }
+    ]
+  },
+  "lastUpdated": "2026-03-17T05:50:57.943Z"
 }
