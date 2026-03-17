@@ -77,13 +77,16 @@
     }
   },
   "stripRolesRequest": {
-    "at": "2026-03-17T05:51:02.221Z",
+    "at": "2026-03-17T05:51:05.175Z",
     "roster": [],
     "teamConfig": [
       {
         "name": "Legacy"
+      },
+      {
+        "name": "Alpha"
       }
     ]
   },
-  "lastUpdated": "2026-03-17T05:51:02.512Z"
+  "lastUpdated": "2026-03-17T05:51:05.469Z"
 }
